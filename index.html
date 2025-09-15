@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UHP Bayanihan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .text-shadow-custom {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link.active {
+            font-weight: bold;
+            color: #1a202c;
+        }
+        /* Custom Modal for Alerts */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Header Section with Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex flex-wrap justify-center sm:justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-800 mb-2 sm:mb-0">UHP Bayanihan</a>
+            <div class="flex flex-wrap justify-center items-center space-x-2 sm:space-x-4">
+                <a href="#about-section" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 nav-link" data-section="about-section">About</a>
+                <a href="#roles-section" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 nav-link" data-section="roles-section">Roles</a>
+                <a href="#operational-flow-section" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 nav-link" data-section="operational-flow-section">How It Works</a>
+                <a href="#finance-section" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 nav-link" data-section="finance-section">Finance</a>
+                <a href="#computation-section" class="text-gray-600 hover:text-gray-900 transition-colors duration-300 nav-link" data-section="computation-section">Computation</a>
+                <a href="#" class="px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-green-500 hover:bg-green-600 transition-colors duration-300 nav-link" data-section="dashboard-section">Dashboard</a>
+                <a href="#registration-section" class="px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-purple-600 hover:bg-purple-700 transition-colors duration-300 nav-link" data-section="registration-section">Register</a>
+                <a href="#community-list-section" class="px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 nav-link" data-section="community-list-section">Community List</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Gradient Background -->
+    <main class="flex-grow">
+        <div class="relative w-full h-96 bg-gradient-to-r from-blue-600 to-purple-600 rounded-b-2xl shadow-lg">
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-30 flex items-center justify-center rounded-b-2xl">
+                <div class="text-center text-white px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-shadow-custom">
+                        UHP Bayanihan
+                    </h1>
+                    <p class="mt-4 text-lg md:text-xl font-medium text-shadow-custom">
+                        A community-led initiative to build a self-sustaining, decentralized Wi-Fi network, powered by the spirit of *bayanihan*.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1.0 Executive Summary Section (Default visible) -->
+        <section id="executive-summary" class="section-content py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">1.0 Executive Summary</h2>
+                <p class="text-gray-600 leading-relaxed text-justify">
+                    UHP Bayanihan is a proposed community-led initiative to establish a self-sustaining, decentralized Wi-Fi network within a “barangay” (village) or local community. This project is founded on the Filipino spirit of “bayanihan,” where community members come together to help one another. The system is designed to provide free and accessible internet to all residents by creating a collaborative ecosystem of Wi-Fi Sharers, Antenna Sponsors, and Subscribers. By bypassing traditional political and governmental structures, the model aims to reduce the basic expenses for households by providing a shared, affordable internet connection.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">About UHP Bayanihan</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed text-justify">
+                            To empower every city and municipality in the Philippines with a unified, cost-effective, and sustainable digital infrastructure that reduces expenses and enhances public service.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed text-justify">
+                            A digitally integrated Philippines where every local government unit leverages centralized, efficient cloud technology to provide equitable and affordable internet connectivity, becoming a model for smart governance.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">The Problem We Solve</h3>
+                        <p class="text-gray-600 leading-relaxed text-justify">
+                            Despite the proliferation of public Wi-Fi initiatives, cities and municipalities in the Philippines face critical challenges in their digital infrastructure. Our platform addresses fragmented networks, high operational costs, and poor scalability by offering a single, powerful cloud-based platform that centralizes the management of all public Wi-Fi infrastructure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roles Section -->
+        <section id="roles-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">2.0 Community Structure and Roles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Wi-Fi Sharers Card -->
+                    <div class="bg-green-100 p-6 rounded-2xl shadow-lg border border-green-200">
+                        <h3 class="font-bold text-lg text-green-800 mb-2">Wi-Fi Sharers</h3>
+                        <p class="text-sm text-green-700">
+                            These are the primary providers of the network. They are homeowners or individuals who already have a stable and reliable internet connection. Their contribution is to share a portion of their bandwidth, acting as a free Wi-Fi access point for their immediate neighborhood or a specified zone within the “barangay”.
+                        </p>
+                    </div>
+                    <!-- Antenna Sponsors Card -->
+                    <div class="bg-blue-100 p-6 rounded-2xl shadow-lg border border-blue-200">
+                        <h3 class="font-bold text-lg text-blue-800 mb-2">Antenna Sponsors</h3>
+                        <p class="text-sm text-blue-700">
+                            These are individuals, local businesses, or community groups who provide the necessary equipment to amplify the Wi-Fi signal. Their donation of a high-gain antenna allows a single Wi-Fi Sharer to broadcast a strong, reliable signal to a wider area.
+                        </p>
+                    </div>
+                    <!-- Subscribers (The Donors) Card -->
+                    <div class="bg-yellow-100 p-6 rounded-2xl shadow-lg border border-yellow-200">
+                        <h3 class="font-bold text-lg text-yellow-800 mb-2">Subscribers (The Donors)</h3>
+                        <p class="text-sm text-yellow-700">
+                            These are the users of the free Wi-Fi service. In exchange for access, they provide a monthly donation of P50 to the community's shared fund. This contribution grants them access not only at their home but to the entire network of Wi-Fi Sharers across the entire “barangay”.
+                        </p>
+                    </div>
+                    <!-- Agents Card -->
+                    <div class="bg-red-100 p-6 rounded-2xl shadow-lg border border-red-200">
+                        <h3 class="font-bold text-lg text-red-800 mb-2">Agents</h3>
+                        <p class="text-sm text-red-700">
+                            Agents are responsible for enrolling new Wi-Fi Sharers and Antenna Sponsors. They earn a 5% incentive from the "net revenue" of the sharers and sponsors they directly enroll, incentivizing the expansion of the network.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operational Flow Section -->
+        <section id="operational-flow-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">3.0 Operational Flow</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-lg border border-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">1</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Antenna Sponsorship</h3>
+                        <p class="text-sm text-gray-700">
+                            An Antenna Sponsor provides a high-quality Wi-Fi antenna to a deserving household to act as a Wi-Fi Sharer.
+                        </p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-lg border border-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">2</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Wi-Fi Sharing</h3>
+                        <p class="text-sm text-gray-700">
+                            The Wi-Fi Sharer connects the antenna to their existing internet router, setting up a separate, open Wi-Fi network.
+                        </p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-lg border border-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">3</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Community Access</h3>
+                        <p class="text-sm text-gray-700">
+                            Residents can connect to the "Bayanihan Wi-Fi" network from anywhere within the antenna's range.
+                        </p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-lg border border-gray-200 relative">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">4</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Access Donation</h3>
+                        <p class="text-sm text-gray-700">
+                            A user makes a monthly P50 donation to gain access to the community's shared fund.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finance Section (Dummy Content) -->
+        <section id="finance-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">4.0 Finance</h2>
+                <p class="text-gray-600 leading-relaxed text-justify">
+                    This section will contain detailed financial models and reports.
+                    (Paki-update po ako kung mayroon na kayong content para sa seksyong ito.)
+                </p>
+            </div>
+        </section>
+
+        <!-- Computation Section -->
+        <section id="computation-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Sample Computation</h2>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner space-y-6">
+                    <p class="text-sm text-gray-600 text-center">
+                        Based on a scenario of **10,000 subscribers** making a **₱50 monthly donation**, and with **200 Wi-Fi Sharers** and **200 Antenna Sponsors** participating in the Nationwide Revenue Share Pool.
+                    </p>
+                    <!-- Total Monthly Revenue -->
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Total Monthly Revenue</h3>
+                        <p class="font-bold text-xl text-green-700">₱10,000 subscribers x ₱50/month = ₱500,000</p>
+                    </div>
+                    <!-- Revenue Breakdown -->
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Revenue Breakdown</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Wi-Fi Sharer Personal Revenue: ₱200,000 (40%)</li>
+                            <li>Nationwide Revenue Share Pool: ₱250,000 (50%)</li>
+                            <li>Operational Expenses: ₱25,000 (5%)</li>
+                            <li>Agent Incentive: Calculated based on direct enrolled Wi-Fi Sharer and Antenna Sponsor.</li>
+                        </ul>
+                    </div>
+                    <!-- Individual Earnings Breakdown -->
+                    <div class="bg-gray-200 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Individual Earnings Breakdown</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Value per Share (Nationwide Pool): ₱225,000 ÷ 400 participants = <span class="font-bold">₱562.50</span> per share</li>
+                            <li>Wi-Fi Sharer Monthly Revenue: ₱1,000 (Personal) + ₱562.50 (Nationwide Share) = <span class="font-bold">₱1,562.50</span></li>
+                            <li>Antenna Sponsor Monthly Revenue: <span class="font-bold">₱562.50</span> (Nationwide Share per antenna sponsored)</li>
+                            <li>Agent Incentive: 5% of the total net revenue of each enrolled Wi-Fi Sharer and Antenna Sponsor.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Community Engagement Section -->
+        <section id="community-engagement-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">5.0 Community Engagement and Sustainability</h2>
+                <ul class="list-disc list-inside text-gray-600 leading-relaxed text-justify space-y-2">
+                    <li><strong>Transparent Fund Management:</strong> All contributions and expenditures will be publicly disclosed to the community on a regular basis to ensure full transparency and trust.</li>
+                    <li><strong>Expansion through Collaboration:</strong> As more residents become aware of the project's success, they will be encouraged to become Wi-Fi Sharers or Antenna Sponsors, leading to organic and sustainable growth.</li>
+                    <li><strong>Non-Political Foundation:</strong> By explicitly excluding political or LGU involvement, the project's focus remains on genuine community empowerment and mutual aid.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section id="conclusion-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">6.0 Conclusion</h2>
+                <p class="text-gray-600 leading-relaxed text-justify">
+                    The UHP Bayanihan community-based model represents a powerful alternative to traditional, top-down digital infrastructure projects. By leveraging community members' existing resources and goodwill, it creates a resilient, affordable, and inclusive Wi-Fi network for all residents, truly embodying the spirit of *bayanihan*.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="section-content hidden py-12 bg-white rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">UHP Bayanihan Community Dashboard</h2>
+                
+                <!-- Total Fund Card -->
+                <div class="bg-blue-600 text-white p-8 rounded-2xl shadow-lg mb-8 text-center">
+                    <h3 class="font-bold text-2xl mb-2">TOTAL COMMUNITY FUND</h3>
+                    <p class="text-5xl font-extrabold" id="total-fund">₱0</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Wi-Fi Sharers Card -->
+                    <div class="bg-green-500 p-6 rounded-2xl shadow-lg border border-green-600 text-center text-white">
+                        <h3 class="font-bold text-lg mb-2">WI-FI SHARERS</h3>
+                        <p class="text-4xl font-extrabold" id="sharers-count">0</p>
+                    </div>
+                    <!-- Antenna Sponsors Card -->
+                    <div class="bg-blue-500 p-6 rounded-2xl shadow-lg border border-blue-600 text-center text-white">
+                        <h3 class="font-bold text-lg mb-2">ANTENNA SPONSORS</h3>
+                        <p class="text-4xl font-extrabold" id="sponsors-count">0</p>
+                    </div>
+                    <!-- Subscribers Card -->
+                    <div class="bg-yellow-500 p-6 rounded-2xl shadow-lg border border-yellow-600 text-center text-white">
+                        <h3 class="font-bold text-lg mb-2">SUBSCRIBERS</h3>
+                        <p class="text-4xl font-extrabold" id="subscribers-count">0</p>
+                    </div>
+                    <!-- Agents Card -->
+                    <div class="bg-red-500 p-6 rounded-2xl shadow-lg border border-red-600 text-center text-white">
+                        <h3 class="font-bold text-lg mb-2">AGENTS</h3>
+                        <p class="text-4xl font-extrabold" id="agents-count">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration-section" class="section-content hidden py-12 bg-purple-100 rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Join the Community</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Be a part of the UHP Bayanihan movement. Sign up to receive updates,
+                    exclusive insights, and to connect with other change-makers in local governance.
+                </p>
+                <form id="registration-form" class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="space-y-4">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="fullName" class="block text-left text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-full shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <!-- Role Dropdown -->
+                        <div>
+                            <label for="role" class="block text-left text-sm font-medium text-gray-700">Role</label>
+                            <select id="role" name="role" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                                <option value="Wi-Fi Sharer">Wi-Fi Sharer</option>
+                                <option value="Antenna Sponsor">Antenna Sponsor</option>
+                                <option value="Subscriber">Subscriber</option>
+                                <option value="Agent">Agent</option>
+                            </select>
+                        </div>
+                        <!-- Agent Name - Conditionally Hidden -->
+                        <div id="agent-name-div" class="hidden">
+                            <label for="agentName" class="block text-left text-sm font-medium text-gray-700">Agent ID</label>
+                            <input type="text" id="agentId" name="agentId" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-full shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <!-- Mobile Number -->
+                        <div>
+                            <label for="mobileNumber" class="block text-left text-sm font-medium text-gray-700">11-digit Mobile Number</label>
+                            <input type="tel" id="mobileNumber" name="mobileNumber" required pattern="[0-9]{11}" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-full shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <!-- Street -->
+                        <div>
+                            <label for="street" class="block text-left text-sm font-medium text-gray-700">Street</label>
+                            <input type="text" id="street" name="street" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-full shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                        </div>
+                        <!-- Barangay Dropdown -->
+                        <div>
+                            <label for="barangay" class="block text-left text-sm font-medium text-gray-700">Barangay</label>
+                            <select id="barangay" name="barangay" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                                <option value="" disabled selected>Select Barangay</option>
+                                <option value="Bagong Silang">Bagong Silang</option>
+                                <option value="Caingin">Caingin</option>
+                                <option value="Dila">Dila</option>
+                                <option value="Malitlit">Malitlit</option>
+                                <option value="Pulo">Pulo</option>
+                                <option value="Pulong Santa Cruz">Pulong Santa Cruz</option>
+                                <option value="Santa Rosa">Santa Rosa</option>
+                                <option value="Sinalhan">Sinalhan</option>
+                                <option value="Tagapo">Tagapo</option>
+                                <option value="Ibaba">Ibaba</option>
+                                <option value="Kanluran">Kanluran</option>
+                                <option value="Labas">Labas</option>
+                                <option value="Macabling">Macabling</option>
+                                <option value="Pooc">Pooc</option>
+                                <option value="Santo Domingo">Santo Domingo</option>
+                                <option value="Santo Cristo">Santo Cristo</option>
+                            </select>
+                        </div>
+                        <!-- City -->
+                        <div>
+                            <label for="city" class="block text-left text-sm font-medium text-gray-700">City</label>
+                            <input type="text" id="city" name="city" value="Santa Rosa" readonly class="mt-1 block w-full px-4 py-2 bg-gray-200 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 cursor-not-allowed">
+                        </div>
+                        <!-- Province -->
+                        <div>
+                            <label for="province" class="block text-left text-sm font-medium text-gray-700">Province</label>
+                            <input type="text" id="province" name="province" value="Laguna" readonly class="mt-1 block w-full px-4 py-2 bg-gray-200 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 cursor-not-allowed">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full mt-6 py-3 px-6 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
+                        Register
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Community List Section -->
+        <section id="community-list-section" class="section-content hidden py-12 bg-gray-100 rounded-xl m-6 shadow-md">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Community Members</h2>
+                <!-- Filter Dropdown -->
+                <div class="mb-6 flex justify-end items-center">
+                    <label for="roleFilter" class="text-sm font-medium text-gray-700 mr-2">Filter by Role:</label>
+                    <select id="roleFilter" class="px-4 py-2 bg-white border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="All">All Roles</option>
+                        <option value="Wi-Fi Sharer">Wi-Fi Sharer</option>
+                        <option value="Antenna Sponsor">Antenna Sponsor</option>
+                        <option value="Subscriber">Subscriber</option>
+                        <option value="Agent">Agent</option>
+                    </select>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-inner overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User ID</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Barangay</th>
+                            </tr>
+                        </thead>
+                        <tbody id="community-list-table-body" class="bg-white divide-y divide-gray-200">
+                            <!-- Data will be populated here by JavaScript -->
+                            <tr>
+                                <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                                    Loading community data...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-600 py-6 shadow-inner">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 UHP Bayanihan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal Structure -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content max-w-sm">
+            <h3 class="text-xl font-bold text-green-600 mb-2">Registration Successful!</h3>
+            <p class="text-gray-700 mb-4">Salamat sa pagrehistro sa UHP Bayanihan. Welcome sa komunidad!</p>
+            <button id="close-modal" class="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">OK</button>
+        </div>
+    </div>
+    
+    <script type="module">
+        import { initializeApp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the Canvas environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app;
+        let auth;
+        let db;
+        let userId;
+        let allRegistrations = [];
+
+        async function initFirebase() {
+            try {
+                if (Object.keys(firebaseConfig).length) {
+                    app = initializeApp(firebaseConfig);
+                    auth = getAuth(app);
+                    db = getFirestore(app);
+                    // Use a more verbose log level for better debugging
+                    setLogLevel('Debug');
+                } else {
+                    console.error("Firebase config is missing. Data persistence will not work.");
+                    return;
+                }
+
+                // Sign in with custom token or anonymously
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                    console.log("Signed in with custom token.");
+                } else {
+                    await signInAnonymously(auth);
+                    console.log("Signed in anonymously.");
+                }
+
+                onAuthStateChanged(auth, user => {
+                    if (user) {
+                        userId = user.uid;
+                        console.log("User ID:", userId);
+                        // Fetch initial data after user is authenticated
+                        setupRealtimeListeners();
+                    } else {
+                        userId = null;
+                        console.log("No user is signed in.");
+                    }
+                });
+
+            } catch (error) {
+                console.error("Firebase initialization or authentication failed:", error);
+            }
+        }
+
+        function setupRealtimeListeners() {
+            if (!db) {
+                console.error("Firestore is not initialized.");
+                return;
+            }
+            try {
+                // Public data collection for all registrations
+                const registrationsCollection = collection(db, "artifacts", appId, "public", "data", "registrations");
+
+                onSnapshot(registrationsCollection, (snapshot) => {
+                    allRegistrations = snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }));
+                    updateDashboardMetrics();
+                    renderCommunityList();
+                }, (error) => {
+                    console.error("Error fetching registrations:", error);
+                });
+            } catch (error) {
+                console.error("Error setting up Firestore listener:", error);
+            }
+        }
+
+        function updateDashboardMetrics() {
+            const sharers = allRegistrations.filter(r => r.role === 'Wi-Fi Sharer');
+            const sponsors = allRegistrations.filter(r => r.role === 'Antenna Sponsor');
+            const subscribers = allRegistrations.filter(r => r.role === 'Subscriber');
+            const agents = allRegistrations.filter(r => r.role === 'Agent');
+
+            const totalFund = subscribers.length * 50;
+
+            document.getElementById('total-fund').textContent = `₱${totalFund.toLocaleString()}`;
+            document.getElementById('sharers-count').textContent = sharers.length.toString();
+            document.getElementById('sponsors-count').textContent = sponsors.length.toString();
+            document.getElementById('subscribers-count').textContent = subscribers.length.toString();
+            document.getElementById('agents-count').textContent = agents.length.toString();
+        }
+
+        function renderCommunityList() {
+            const tableBody = document.getElementById('community-list-table-body');
+            const roleFilter = document.getElementById('roleFilter').value;
+
+            // Clear existing rows
+            tableBody.innerHTML = '';
+
+            const filteredData = roleFilter === 'All' ? allRegistrations : allRegistrations.filter(r => r.role === roleFilter);
+            
+            if (filteredData.length === 0) {
+                const noDataRow = `
+                    <tr>
+                        <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                            No community members found for this role.
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML = noDataRow;
+                return;
+            }
+
+            filteredData.forEach(member => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">${member.userId}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${member.fullName}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${member.role}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${member.barangay}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Event listener for the registration form
+        document.getElementById('registration-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = {
+                fullName: form.fullName.value,
+                role: form.role.value,
+                mobileNumber: form.mobileNumber.value,
+                street: form.street.value,
+                barangay: form.barangay.value,
+                city: form.city.value,
+                province: form.province.value,
+                userId: userId,
+                timestamp: new Date()
+            };
+
+            // Add agentId if the role is 'Wi-Fi Sharer' or 'Antenna Sponsor'
+            if (formData.role === 'Wi-Fi Sharer' || formData.role === 'Antenna Sponsor') {
+                 formData.agentId = form.agentId.value;
+            }
+
+            try {
+                const registrationsCollection = collection(db, "artifacts", appId, "public", "data", "registrations");
+                await addDoc(registrationsCollection, formData);
+
+                console.log("Document successfully written!");
+                showModal();
+                form.reset();
+            } catch (error) {
+                console.error("Error adding document: ", error);
+            }
+        });
+
+        // Event listener for role dropdown in registration
+        document.getElementById('role').addEventListener('change', (e) => {
+            const agentNameDiv = document.getElementById('agent-name-div');
+            const selectedRole = e.target.value;
+            if (selectedRole === 'Wi-Fi Sharer' || selectedRole === 'Antenna Sponsor') {
+                agentNameDiv.classList.remove('hidden');
+                document.getElementById('agentId').setAttribute('required', 'required');
+            } else {
+                agentNameDiv.classList.add('hidden');
+                document.getElementById('agentId').removeAttribute('required');
+            }
+        });
+
+        // Event listener for community list filter
+        document.getElementById('roleFilter').addEventListener('change', () => {
+            renderCommunityList();
+        });
+
+
+        // Custom modal functions
+        const modal = document.getElementById('success-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        function showModal() {
+            modal.style.display = 'flex';
+        }
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Click anywhere outside the modal to close it
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Navigation logic
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section-content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Get the ID of the target section from the data-section attribute
+                const targetSectionId = e.target.getAttribute('data-section');
+                
+                // Hide all sections first
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show the target section
+                const targetSection = document.getElementById(targetSectionId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    window.scrollTo({ top: targetSection.offsetTop, behavior: 'smooth' });
+                }
+
+                // Update active class for nav links
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+
+        // On page load, show the executive summary section by default and mark the first nav link as active
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('executive-summary').classList.remove('hidden');
+            const dashboardLink = document.querySelector('[data-section="dashboard-section"]');
+            if (dashboardLink) {
+                 dashboardLink.classList.add('active');
+                 dashboardLink.click();
+            }
+            initFirebase();
+        });
+    </script>
+</body>
+</html>
